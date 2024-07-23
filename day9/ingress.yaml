@@ -4,14 +4,14 @@ metadata:
   name: example-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/affinity: "cookie"
-    nginx.ingress.kubernetes.io/session-cookie-name: "route"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/affinity: "cookie"
+    # nginx.ingress.kubernetes.io/session-cookie-name: "route"
 spec:
-  tls:
-      - hosts:
-          - myapp.local
-        secretName: voting-app-tls
+  # tls:
+  #     - hosts:
+  #         - myapp.local
+  #       secretName: voting-app-tls
   rules:
   - host: myapp.local
     http:
