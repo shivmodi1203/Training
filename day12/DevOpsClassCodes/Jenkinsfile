@@ -1,0 +1,44 @@
+pipeline{
+    agent any
+
+    tools {
+        maven 'Maven-3.9.8'
+    }
+
+    stages{
+        stage('Checkout'){
+            steps{
+                git branch: 'main', credentialsId: 'GitHub', url: 'https://github.com/shivmodi1203/DevOpsClassCodes.git'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn clean install'
+            }
+        }
+        stage('Test'){
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage('Archive Artifacts'){
+            steps{
+                archiveArtifacts artifacts: '**/target/*.tar', allowEmptyArchive: true
+            }
+        }
+    }
+
+    post{
+        always{
+            echo "Pipeline Finished"
+        }
+
+        success{
+            echo "Pipeline is compiled Successfully"
+        }
+
+        failure{
+            echo "Pipeline failed"
+        }
+    }
+}
