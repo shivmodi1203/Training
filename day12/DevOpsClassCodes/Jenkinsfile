@@ -5,6 +5,10 @@ pipeline{
         maven 'Maven-3.9.8'
     }
 
+    parameters {
+        choice(choices: ['test', 'compile', 'package'], description: "Select Maven Goal", name: "userChoice")
+    }
+
     stages{
         stage('Checkout'){
             steps{
@@ -35,6 +39,7 @@ pipeline{
 
         success{
             echo "Pipeline is compiled Successfully"
+            echo "Hellow world"
         }
 
         failure{
