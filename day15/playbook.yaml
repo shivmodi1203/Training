@@ -1,0 +1,14 @@
+---
+  - hosts: servers
+    tasks:
+      - name: Printing Hello world
+        debug:
+          msg: "Hello world"
+      # - name: Copy test.txt file
+      #   copy:
+      #     src: test.txt
+      #     dest: /home/shiv/Downloads
+      - name: Delete test.txt file
+        file:
+          path: /home/shiv/Downloads
+          state: absent
