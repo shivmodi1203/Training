@@ -12,7 +12,7 @@ pipeline{
         stage('Build Docker Image'){
             steps{
                 script{
-                    dockerImage = docker.build("${registry}:latest")
+                    dockerImage = docker.build("${registry}:${env.BUILD_ID}")
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline{
             steps{
                 script{
                     docker.withRegistry('https://hub.docker.com/', registryCredentials){
-                        def runContainer = docker.image("${registry}").run('--name mynew-container -d')
+                        def runContainer = docker.image("${registry}:${env.BUILD_ID}").run('--name mynew-container -d')
                         echo "Container ID: ${runContainer.id}"
                     }
                 }

@@ -34,7 +34,7 @@ pipeline{
         stage('Build Docker Image'){
             steps{
                 script{
-                    dockerImage = docker.build("${registry}:latest")
+                    dockerImage = docker.build("${registry}:${env.BUILD_ID}")
                 }
             }
         }
@@ -61,5 +61,6 @@ pipeline{
 }
 ```
 - Push the Docker Image: The pipeline should push the created Docker image to a specified DockerHub repository.
-![alt text](image-3.png)
+![alt text](image-5.png)
 - Deploy the Container: The pipeline should deploy a container using the pushed Docker image.
+![alt text](image-4.png)
