@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: Task to Install Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+    - name: Print IP
+      debug:
+        msg: "{{inventory_hostname}}"
+    - name:
+      copy: 
+        src: index.html.j2
+        dest: /var/www/html/index.html
