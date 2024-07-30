@@ -25,5 +25,15 @@ pipeline{
                 }
             }
         }
+        stage('Deploy Container'){
+            steps{
+                script{
+                    docker.withRegistry('https://hub.docker.com/', registryCredentials){
+                        def runContainer = docker.image("${registry}").run('--name mynew-container -d')
+                        echo "Container ID: ${runContainer.id}"
+                    }
+                }
+            }
+        }
     }
 }
