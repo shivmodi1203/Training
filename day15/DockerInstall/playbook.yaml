@@ -1,14 +1,12 @@
 ---
 - name: Install Docker and Run an image
   hosts: all
-  become: true
   tasks: 
     - name: install python and Docker
       apt:
         name:
           - python3
           - python3-pip
-          - containerd
           - docker.io
         state: present
 
