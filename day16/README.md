@@ -10,10 +10,16 @@ ansible -m command -a "df -h" -i inventory
 ```
 ![alt text](image-1.png)
 - Restart a specific service on all managed nodes.
+```
+ansible all -m service -a "name=nginx status=restarted" -i inventory.ini --become
+```
 ![alt text](image-4.png)
 ![alt text](image-5.png)
 
 - Update all packages on a subset of managed nodes
+```
+ansible all -m apt -a "update_cache=yes" -i inventory.ini --become
+```
 ![alt text](image-6.png)
 
 ## Project 4: Ansible Playbooks: The Basics
