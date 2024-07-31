@@ -1,119 +1,3 @@
-#### **Git Cherry Pick**
-
-#### **Scenario:**
-
-* You have two branches: `branch-A` and `branch-B`.  
-* You made a bug fix commit on `branch-A` that you now want to apply to `branch-B` without merging all changes from `branch-A` into `branch-B`.
-
-#### **Steps:**
-
-**Identify the Commit**:  
-First, find the commit hash of the bug fix commit on `branch-A`:
-
-`git log --oneline branch-A`
-
-1. Suppose the commit hash is `abcdef1234567890`.
-
-**Switch to `branch-B`**:  
-Ensure you are on `branch-B` where you want to apply the bug fix:
-
-`git checkout branch-B`
-
-1. 
-
-**Cherry-pick the Commit**:  
-Apply the bug fix commit from `branch-A` to `branch-B`:
-
-`git cherry-pick abcdef1234567890`
-
-1. This command applies the changes introduced by the commit `abcdef1234567890` onto `branch-B`.
-
-**Resolve Conflicts (if any)**:
-
-`git cherry-pick --continue`
-
-1. 
-
-**Commit the Cherry-picked Changes**:  
-After resolving conflicts (if any), commit the cherry-picked changes on `branch-B`:
-
-`git commit`
-
-1. This creates a new commit on `branch-B` that includes the changes from `branch-A`'s selected commit.
-
-**Git Stash**
-
-#### **Step 1: Initialize a Git Repository**
-
-First, create a new directory for your project and initialize a Git repository:
-
-`mkdir git-stash-example`  
-`cd git-stash-example`  
-`git init`
-
-#### **Step 2: Add and Commit Files**
-
-Create some files and add content to them:
-
-`echo "This is file1.txt" > file1.txt`  
-`echo "This is file2.txt" > file2.txt`
-
-Add these files to the staging area and commit them:
-
-`git add file1.txt file2.txt`  
-`git commit -m "Initial commit - Added file1.txt and file2.txt"`
-
-#### **Step 3: Modify Files**
-
-Make some changes to `file1.txt`:
-
-`echo "Updated content in file1.txt" >> file1.txt`
-
-#### **Step 4: Use `git stash`**
-
-Now, let's use `git stash` to temporarily store the changes in `file1.txt` without committing them:
-
-`git stash save "WIP: Work in progress changes"`
-
-This command saves your changes (in this case, the update to `file1.txt`) to a stash with a message "WIP: Work in progress changes".
-
-#### **Step 5: Verify Stash**
-
-You can verify the stash list using:
-
-`git stash list`
-
-It should show something like:
-
-`stash@{0}: On master: WIP: Work in progress changes`
-
-#### **Step 6: Check Working Directory Status**
-
-Check the status of your working directory:
-
-`git status`
-
-It should indicate that your working directory is clean (no changes).
-
-#### **Step 7: Apply Stashed Changes**
-
-Let's apply the stashed changes back into your working directory:
-
-`git stash pop`
-
-#### **Step 8: Verify Changes**
-
-Check the changes in `file1.txt`:
-
-`cat file1.txt`
-
-#### **Step 9: Commit Stashed Changes**
-
-If you are satisfied with the changes, commit them:
-
-`git add file1.txt`  
-`git commit -m "Updated file1.txt with stashed changes"`
-
 ### **Docker Project 01**
 
 #### **Project Overview**
@@ -130,13 +14,12 @@ In this project, you'll go through all three lifecycles of Docker: pulling an im
 
 `docker pull nginx`
 
-1. 
+![alt text](image.png)
 
 **Run the Nginx Container:**
 
 `docker run --name my-nginx -d -p 8080:80 nginx`
 
-1.   
    * `--name my-nginx`: Assigns a name to the container.  
    * `-d`: Runs the container in detached mode.  
    * `-p 8080:80`: Maps port 8080 on your host to port 80 in the container.
@@ -145,8 +28,11 @@ In this project, you'll go through all three lifecycles of Docker: pulling an im
 
 `docker ps`
 
-1.   
+![alt text](image-1.png)  
+
    * Visit `http://localhost:8080` in your browser. You should see the Nginx welcome page.
+
+![alt text](image-2.png)
 
 ### **Part 2: Modifying the Container and Creating a New Image**
 
@@ -158,19 +44,15 @@ In this project, you'll go through all three lifecycles of Docker: pulling an im
 
 `docker exec -it my-nginx /bin/bash`
 
-1. 
-
 **Create a Custom HTML Page:**
 
 `echo "<html><body><h1>Hello from Docker!</h1></body></html>" > /usr/share/nginx/html/index.html`
-
-1. 
 
 **Exit the Container:**
 
 `exit`
 
-1. 
+![alt text](image-3.png)
 
 **Commit the Changes to Create a New Image:**
 
@@ -182,9 +64,12 @@ In this project, you'll go through all three lifecycles of Docker: pulling an im
 
 `docker run --name my-custom-nginx -d -p 8081:80 custom-nginx`
 
-1.   
+![alt text](image-4.png)
+
 1. **Verify the New Container:**  
    * Visit `http://localhost:8081` in your browser. You should see your custom HTML page.
+
+![alt text](image-5.png)
 
 ### **Part 3: Creating a Dockerfile to Build and Deploy a Web Application**
 
@@ -230,15 +115,16 @@ Create a `Dockerfile` in the `my-webapp` directory with the following content:
 
 `docker build -t my-webapp-image .`
 
-1. 
+![alt text](image-6.png)
 
 **Run a Container from the Built Image:**
 
 `docker run --name my-webapp-container -d -p 8082:80 my-webapp-image`
 
-1.   
-1. **Verify the Web Application:**  
+**Verify the Web Application:**  
    * Visit `http://localhost:8082` in your browser. You should see your custom web application.
+
+   ![alt text](image-7.png)
 
 ---
 
@@ -252,6 +138,8 @@ Create a `Dockerfile` in the `my-webapp` directory with the following content:
 
 `docker stop my-nginx my-custom-nginx my-webapp-container`  
 `docker rm my-nginx my-custom-nginx my-webapp-container`
+
+![alt text](image-8.png)
 
 1. **Remove the Images:**
 
@@ -313,11 +201,13 @@ In the `database` directory, create a file named `Dockerfile` with the following
 `docker build -t my-postgres-db .`  
 `cd ..`
 
-1. 
+![alt text](image-9.png)
 
 **Run the PostgreSQL Container:**
 
 `docker run --name postgres-container --network fullstack-network -v pgdata:/var/lib/postgresql/data -d my-postgres-db`
+
+![alt text](image-10.png)
 
 ### **Part 3: Setting Up the Backend (Node.js with Express)**
 
@@ -330,11 +220,13 @@ In the `database` directory, create a file named `Dockerfile` with the following
 `cd backend`  
 `npm init -y`
 
-1. 
+![alt text](image-11.png)
 
 **Install Express and pg (PostgreSQL client for Node.js):**
 
 `npm install express pg`
+
+![alt text](image-12.png)
 
 1.   
 1. **Create the Application Code:**
@@ -393,11 +285,13 @@ In the `backend` directory, create a file named `Dockerfile` with the following 
 `docker build -t my-node-app .`  
 `cd ..`
 
-1. 
+![alt text](image-13.png)
 
 **Run the Backend Container:**
 
 `docker run --name backend-container --network fullstack-network -d my-node-app`
+
+![alt text](image-14.png)
 
 ### **Part 4: Setting Up the Frontend (Nginx)**
 
@@ -433,11 +327,13 @@ In the `frontend` directory, create a file named `Dockerfile` with the following
 `docker build -t my-nginx-app .`  
 `cd ..`
 
-1. 
+![alt text](image-15.png)
 
 **Run the Frontend Container:**
 
 `docker run --name frontend-container --network fullstack-network -p 8080:80 -d my-nginx-app`
+
+![alt text](image-16.png)
 
 **Part 5: Connecting the Backend and Database**
 
@@ -500,6 +396,12 @@ Update the `index.html` to include a link to the backend:
 
 1. **Final Verification:**  
    * Visit `http://localhost:8080` and click the link to fetch data from the backend.
+
+   ![alt text](image-17.png)
+
+   ![alt text](image-18.png)
+
+   ![alt text](image-19.png)
 
 **Part 7: Cleaning Up**
 
