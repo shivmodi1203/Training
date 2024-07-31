@@ -10,5 +10,5 @@
     #     msg: "{{inventory_hostname}}"
     - name:
       copy: 
-        src: index.html.j2
+        src: index.j2
         dest: /var/www/html/index.html
