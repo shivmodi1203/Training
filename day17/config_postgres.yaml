@@ -1,0 +1,9 @@
+---
+- name: Installation of PSQL
+  hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - install_postgre    
+  vars_files: 
+    - roles/install_postgre/var/main.yml

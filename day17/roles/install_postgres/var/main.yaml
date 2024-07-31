@@ -1,0 +1,6 @@
+---
+postgresql_version: 16
+db_name: database1
+db_user: root
+db_password: root
+postgres_password: pass@123

@@ -1,13 +1,13 @@
 ---
 - hosts: all
   tasks:
-    # - name: Task to Install Nginx
-    #   ansible.builtin.apt:
-    #     name: nginx
-    #     state: present
-    # - name: Print hostname
-    #   debug:
-    #     msg: "{{inventory_hostname}}"
+    - name: Task to Install Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+    - name: Print hostname
+      debug:
+        msg: "{{inventory_hostname}}"
     - name:
       template: 
         src: index.j2
@@ -16,6 +16,6 @@
         - Restart Nginx
   handlers:
     - name: Restart Nginx
-      service: 
+      ansible.builtin.service: 
         name: nginx
         start: restarted
