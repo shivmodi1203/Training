@@ -2,9 +2,13 @@
 - name: Update apt cache
   apt: update_cache=yes
 
+- name: Download the PostgreSQL APT key
+  shell: |
+    curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc -o /tmp/ACCC4CF8.asc
+
 - name: Add the PostgreSQL APT key
   apt_key:
-    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    file: /tmp/ACCC4CF8.asc
     state: present
 
 - name: Add the PostgreSQL APT repositories
@@ -20,7 +24,8 @@
 - name: Set password for the default PostgreSQL user
   become: yes
   become_user: postgres
-  shell: 'psql -c "ALTER USER postgres WITH PASSWORD ''{{ postgres_password }}'';"'
+  become_method: sudo
+  command: psql -c "ALTER USER postgres WITH PASSWORD '{{ postgres_password }}';"
 
 - name: Create a new user in PostgreSQL
   become: yes

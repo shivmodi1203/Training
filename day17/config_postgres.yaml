@@ -4,6 +4,6 @@
   become: yes
   become_method: sudo
   roles:
-    - install_postgre    
+    - install_postgres   
   vars_files: 
-    - roles/install_postgre/var/main.yml
+    - roles/install_postgres/var/main.yaml
