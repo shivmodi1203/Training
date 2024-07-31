@@ -9,6 +9,13 @@
     #   debug:
     #     msg: "{{inventory_hostname}}"
     - name:
-      copy: 
+      template: 
         src: index.j2
         dest: /var/www/html/index.html
+      notify:
+        - Restart Nginx
+  handlers:
+    - name: Restart Nginx
+      service: 
+        name: nginx
+        start: restarted
