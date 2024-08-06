@@ -1,0 +1,8 @@
+---
+- name: Deploy Three-Tier Web Application
+  hosts: all
+  become: yes
+  roles:
+    - mysql
+    - node
+    - nginx
