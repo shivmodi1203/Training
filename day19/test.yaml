@@ -1,0 +1,23 @@
+---
+- name: Full Stack Application
+  hosts: all
+  become: yes
+  tasks:
+    - name: update_cache
+      apt:
+        update_cache: yes
+
+- hosts: database
+  become: true
+  roles: 
+    - mysql
+
+- hosts: backend
+  become: true
+  roles: 
+    - node
+
+- hosts: app
+  become: true
+  roles: 
+    - nginx
