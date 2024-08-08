@@ -1,0 +1,14 @@
+---
+- name: Test EC2 Inventory
+  hosts: all
+  tasks:
+    - name: Print hostname
+      debug:
+        msg: "Host {{ inventory_hostname }} with IP {{ ansible_host }}"
+  # - name: Ensure Docker is running
+  #   service:
+  #     name: docker
+  #     state: started
+  #   register: docker_service
+  #   failed_when: docker_service.state != 'started'
+  #   ignore_errors: yes

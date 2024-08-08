@@ -1,0 +1,24 @@
+---
+- name: Copying index.html file
+  copy:
+    src: index.html
+    dest: /tmp
+- name: Copying Dockerfile
+  copy:
+    src: Dockerfile
+    dest: /tmp
+- name: Install pip
+  apt:
+    pkg: "{{ item }}"
+  loop:
+    - python3-pip
+    - python3-docker
+- name: Build Docker Image
+  command:
+    cmd: docker build -t mynginx /tmp/
+- name: Create a mynginx container
+  community.doker.docker_container:
+    name: mynginxcontainer
+    image: mynginx
+    ports:
+     - "80:80"
