@@ -311,7 +311,7 @@ Use dynamic inventory scripts to manage AWS EC2 instances.
 4. **Make the Script Executable**:
 
    ```bash
-   chmod +x dynamic_inventory.py
+   chmod +x ec2_inventory.py
    ```
 
 5. **Test the Script**:
