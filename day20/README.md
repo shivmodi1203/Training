@@ -208,8 +208,9 @@ Use advanced Ansible modules such as `docker_container` to manage containerized 
              image: my_app_image
              state: started
              ports:
-               - "80:80"
+               - "81:80"
      ```
+     ![alt text](image-2.png)
 
 2. **Manage AWS EC2 Instances**
    - Create a playbook for AWS EC2 instances:

@@ -17,8 +17,8 @@
   command:
     cmd: docker build -t mynginx /tmp/
 - name: Create a mynginx container
-  community.doker.docker_container:
+  community.docker.docker_container:
     name: mynginxcontainer
     image: mynginx
     ports:
-     - "80:80"
+     - "81:80"
