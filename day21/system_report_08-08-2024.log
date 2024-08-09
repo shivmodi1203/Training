@@ -1,0 +1,43 @@
+=== System Metrices ===
+--- CPU and Memory Usage ---
+CPU usage : 22.4%
+Memory Usage : 32.2814%
+
+--- Disk Usage ---
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7.7G     0  7.7G   0% /dev
+tmpfs           1.6G  2.5M  1.6G   1% /run
+/dev/nvme0n1p1   94G   67G   23G  76% /
+tmpfs           7.7G  159M  7.6G   3% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           7.7G     0  7.7G   0% /sys/fs/cgroup
+/dev/loop0      139M  139M     0 100% /snap/azcli/8
+/dev/loop1      128K  128K     0 100% /snap/bare/5
+/dev/loop2      167M  167M     0 100% /snap/chromium/2923
+/dev/loop3       64M   64M     0 100% /snap/core20/2318
+/dev/loop4      505M  505M     0 100% /snap/gnome-42-2204/172
+/dev/loop5       13M   13M     0 100% /snap/snap-store/1113
+/dev/loop7       75M   75M     0 100% /snap/core22/1439
+/dev/loop6       66M   66M     0 100% /snap/gtk-common-themes/1519
+/dev/loop12      56M   56M     0 100% /snap/core18/2829
+/dev/loop11      68M   68M     0 100% /snap/cups/1058
+/dev/loop10      75M   75M     0 100% /snap/core22/1380
+/dev/loop14     249M  249M     0 100% /snap/gnome-3-38-2004/99
+/dev/loop15     350M  350M     0 100% /snap/gnome-3-38-2004/143
+/dev/loop13     165M  165M     0 100% /snap/gnome-3-28-1804/198
+/dev/loop8      164M  164M     0 100% /snap/chromium/2910
+/dev/loop16      39M   39M     0 100% /snap/snapd/21465
+/dev/loop17      39M   39M     0 100% /snap/snapd/21759
+/dev/loop9       64M   64M     0 100% /snap/core20/2264
+/dev/loop21      13M   13M     0 100% /snap/snap-store/959
+/dev/loop24      84M   84M     0 100% /snap/outlook-for-linux/18
+/dev/loop25      13M   13M     0 100% /snap/terraform-docs/13
+/dev/loop20      88M   88M     0 100% /snap/teams-for-linux/649
+/dev/loop19      56M   56M     0 100% /snap/core18/2823
+/dev/loop18      92M   92M     0 100% /snap/gtk-common-themes/1535
+/dev/loop23     506M  506M     0 100% /snap/gnome-42-2204/176
+/dev/loop22      88M   88M     0 100% /snap/teams-for-linux/645
+/dev/nvme0n1p4  359G  177G  165G  52% /home
+/dev/nvme0n1p3  976M   44M  932M   5% /boot/efi
+tmpfs           1.6G   68K  1.6G   1% /run/user/1000
+

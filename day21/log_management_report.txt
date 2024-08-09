@@ -1,0 +1,10 @@
+Log Management Report
+---------------------
+Rotated log: lastlog
+Rotated log: system@665617150e2f4a55821fd1ffecc4acc6-0000000000000001-00061e1ef321b5c1.journal
+Rotated log: system@2780d057a27745c3842ae40e817e97bc-0000000000000001-00061a08811c08b6.journal
+Rotated log: system@1b2052be1e5e40f4a9e3a8c80b155bfb-0000000000000001-000616aa8aa6a80d.journal
+Rotated log: system@a684a16e5f7d4f71a1e3643dd1336b9a-0000000000091637-000619cbb6d1c213.journal
+Rotated log: system@a684a16e5f7d4f71a1e3643dd1336b9a-000000000006acf3-000619b888cd6ca1.journal
+Rotated log: system@ef054bd5f52841e8b45a9cdd8aeccbb0-0000000000000001-00061d41d8391620.journal
+Rotated log: system@a684a16e5f7d4f71a1e3643dd1336b9a-0000000000000001-0006194685936afe.journal
