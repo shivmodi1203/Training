@@ -192,3 +192,21 @@
               api_url: "https://hooks.slack.com/services/T06QREEBBK4/B07GAUNQEDS  uYlw3NbiTiBFve5F7efBkAeB"
           ```
           ![alt text](image-8.png)
+10. Hands-on Exercise: Creating Alerts:
+    
+    + Task: Test the entire alerting pipeline by creating and triggering custom alerts.
+    
+    + Deliverable:
+        + Simulate a scenario where a node exceeds 90% CPU usage and ensure alerts are triggered and sent to both Email and Slack.
+        + Validate the alerts in both notification channels.
+          ```yml
+          groups:
+            - name: example
+            rules:
+                - record: job:node_cpu_seconds:avg_idle
+                expr: avg without(cpu)(rate(node_cpu_seconds_total{mode="idle"}[5m]))
+
+                - alert: NodeExporterDown
+                expr: up{job="node"} == 0 
+          ```
+          ![alt text](image-8.png)
