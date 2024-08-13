@@ -14,7 +14,7 @@
 
 ## Output
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 2. Using Exporters (Node Exporter):
     
@@ -35,21 +35,21 @@
 ```
 ## Output
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ```
 100 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100)
 ```
 ## Output
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 ```
 100 - (node_filesystem_avail_bytes / node_filesystem_size_bytes * 100)
 ```
 
 ## Output
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 3. Hands-on Exercise: Setting Up Exporters:
     
@@ -68,21 +68,21 @@
 ```
 ## Output
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ```
 100 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100)
 ```
 ## Output
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 ```
 100 - (node_filesystem_avail_bytes / node_filesystem_size_bytes * 100)
 ```
 
 ## Output
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 4. Introduction to PromQL:
     
@@ -144,7 +144,7 @@
                     - targets:
                     - localhost:9093
           ```
-          ![alt text](image-6.png)
+          ![alt text](images/image-6.png)
 
 8. Writing Alerting Rules:
     
@@ -172,8 +172,8 @@
             - alert: NodeExporterDown
                 expr: up{job="node_exporter_metrics"} == 0 
           ```
-          ![alt text](image-5.png)
-          ![alt text](image-7.png)
+          ![alt text](images/image-5.png)
+          ![alt text](images/image-7.png)
 9. Setting Up Notification Channels (Email, Slack, etc.):
     
     + Task: Integrate Alertmanager with multiple notification channels like Email and Slack.
@@ -191,7 +191,7 @@
               - channel: "#random"
               api_url: "https://hooks.slack.com/services/T06QREEBBK4/B07GAUNQEDS  uYlw3NbiTiBFve5F7efBkAeB"
           ```
-          ![alt text](image-8.png)
+          ![alt text](images/image-8.png)
 10. Hands-on Exercise: Creating Alerts:
     
     + Task: Test the entire alerting pipeline by creating and triggering custom alerts.
@@ -209,4 +209,4 @@
                 - alert: NodeExporterDown
                 expr: up{job="node"} == 0 
           ```
-          ![alt text](image-8.png)
+          ![alt text](images/image-8.png)
