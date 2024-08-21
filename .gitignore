@@ -13,3 +13,4 @@ prometheus*
 alertmanager
 .terraform*
 terraform.tfstate
+terraform.tfvars
