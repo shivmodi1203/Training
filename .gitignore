@@ -11,3 +11,5 @@ awscliv2.zip
 node_exporter*
 prometheus*
 alertmanager
+.terraform*
+terraform.tfstate
