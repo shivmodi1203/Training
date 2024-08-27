@@ -20,30 +20,26 @@ variable "availability_zone" {
   type = list(string)
 }
 
-# variable "rds_instance_type" {
-#   description = "The instance type for the RDS instance"
-#   type        = string
-#   default     = "db.t3.micro"
-# }
+variable "rds_instance_type" {
+  description = "The instance type for the RDS instance"
+  type        = string
+}
 
-# variable "db_name" {
-#   description = "The name of the database"
-#   default     = "my-db"
-#   type        = string
-# }
+variable "db_name" {
+  description = "The name of the database"
+  type        = string
+}
 
-# variable "db_username" {
-#   description = "The database username"
-#   default     = "shiv"
-#   type        = string
-# }
+variable "db_username" {
+  description = "The database username"
+  type        = string
+}
 
-# variable "db_password" {
-#   description = "The database password"
-#   type        = string
-#   sensitive   = true
-#   default     = "pass1234"
-# }
+variable "db_password" {
+  description = "The database password"
+  type        = string
+  sensitive   = true
+}
 
 variable "s3_bucket_name" {
   description = "The name of the S3 bucket"
