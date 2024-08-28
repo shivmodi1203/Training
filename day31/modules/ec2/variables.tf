@@ -11,7 +11,7 @@ variable "ec2_instance_type" {
 }
 
 variable "key_name" {
-  default = "shiv-key-terraform-stagging"
+  default = "shiv-key-terraform-test"
 }
 
 variable "security_group_ids" {

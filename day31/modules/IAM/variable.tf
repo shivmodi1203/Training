@@ -1,9 +1,9 @@
 variable "role_name" {
-  default = "ec2_s3_access_role"
+  default = "shiv_ec2_s3_access_role"
 }
 
 variable "policy_attachment_name" {
-  default = "ec2_s3_access_policy_attachment"
+  default = "shiv_ec2_s3_access_policy_attachment"
 }
 
 variable "policy_arn" {
@@ -11,5 +11,5 @@ variable "policy_arn" {
 }
 
 variable "instance_profile_name" {
-  default = "ec2_instance_profile_already_exist"
+  default = "shiv_ec2_instance_profile_already_exist"
 }

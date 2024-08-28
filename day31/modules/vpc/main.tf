@@ -55,6 +55,7 @@ resource "aws_route_table" "public" {
 
 # Define the Route Table Association for Public Subnet
 resource "aws_route_table_association" "public" {
-  subnet_id      = aws_subnet.public.id[0]
+  count = length(var.public_cidr_block)
+  subnet_id      = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.public.id
 }
