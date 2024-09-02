@@ -1,0 +1,8 @@
+---
+- name: Set up Kubernetes Cluster with containerd and Calico
+  hosts: master
+  become: true
+  tasks:
+    - name: Print Hello wold
+      debug:
+        msg: "Hello world {{ansible_hostname}}"
